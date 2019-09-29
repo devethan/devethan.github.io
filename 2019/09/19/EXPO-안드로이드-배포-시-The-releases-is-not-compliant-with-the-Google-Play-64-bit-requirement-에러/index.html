@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러 | 들리시나요</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Expo">
+    
+    <meta name="description" content="현재 환경 &amp;quot;expo&amp;quot; : &amp;quot;31.0.4&amp;quot; &amp;quot;react&amp;quot; : &amp;quot;16.5.0&amp;quot; &amp;quot;firebase&amp;quot; : &amp;quot;^4.12.1&amp;quot;  문제 expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에">
+<meta name="keywords" content="Expo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러">
+<meta property="og:url" content="https://devohno.github.io/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/index.html">
+<meta property="og:site_name" content="들리시나요">
+<meta property="og:description" content="현재 환경 &amp;quot;expo&amp;quot; : &amp;quot;31.0.4&amp;quot; &amp;quot;react&amp;quot; : &amp;quot;16.5.0&amp;quot; &amp;quot;firebase&amp;quot; : &amp;quot;^4.12.1&amp;quot;  문제 expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://devohno.github.io/image/android-64-bit-error.png">
+<meta property="og:updated_time" content="2019-09-29T05:46:34.397Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러">
+<meta name="twitter:description" content="현재 환경 &amp;quot;expo&amp;quot; : &amp;quot;31.0.4&amp;quot; &amp;quot;react&amp;quot; : &amp;quot;16.5.0&amp;quot; &amp;quot;firebase&amp;quot; : &amp;quot;^4.12.1&amp;quot;  문제 expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에">
+<meta name="twitter:image" content="https://devohno.github.io/image/android-64-bit-error.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">제 목소리가 들리시나요?</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Diary/">Diary</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Site/">Site</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Expo/">Expo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/React/">React</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/devethan">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Expo/">Expo</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" class="article-date">
+            <time datetime="2019-09-19T02:49:19.000Z" itemprop="datePublished">2019-09-19</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Expo/">Expo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="현재-환경"><a href="#현재-환경" class="headerlink" title="현재 환경"></a>현재 환경</h2><ul>
+<li><code>&quot;expo&quot; : &quot;31.0.4&quot;</code></li>
+<li><code>&quot;react&quot; : &quot;16.5.0&quot;</code></li>
+<li><code>&quot;firebase&quot; : &quot;^4.12.1&quot;</code></li>
+</ul>
+<h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><ol>
+<li><code>expo build:android</code> 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에러가 발생한다.</li>
+</ol>
+<p><img src="/image/android-64-bit-error.png" alt></p>
+<p>문제의 요점은 구글이 지난 8월을 기점으로 배포 정책을 업데이트 했는데 배포되는 어플리케이션은 64-bit 요구사항을 충족해야 배포가 가능하게 되었다. 자세한 내용은 <a href="https://developers-kr.googleblog.com/2019/01/get-your-apps-ready-for-64-bit.html" target="_blank" rel="noopener">여기</a> 를 통해서 확인하시길.</p>
+<ol start="2">
+<li><p>ExpoSDK 31 에서는 빌드되는 apk 파일이 64-bit이 아닌 32-bit만 지원한다. 그래서 Expo 측에서 이러한 이슈를 대응하기 위해서 33버전에 64-bit를 지원하도록 반영했다.<br><a href="https://github.com/expo/expo/pull/4565" target="_blank" rel="noopener">https://github.com/expo/expo/pull/4565</a></p>
+</li>
+<li><p>ExpoSDK 31 버전을 33으로 올리면 된다. 무척이나 간단하다!</p>
+</li>
+<li><p>인 줄 알았는데 더 큰 문제가 있었다.</p>
+</li>
+<li><p>ExpoSDK 31 에 맞게 사용하던 디펜던시들이 33으로 버전 업되면서 엉키기 시작한다.<br>예를 들어 <code>&quot;react-native&quot; : &quot;~~expo/react-native/archive/sdk-31.0.0.tar.gz&quot;</code> 라던지, <code>expo</code> 를 기반으로 하는 디펜던시들이 꼬인다.</p>
+</li>
+<li><p>모듈 <em>import</em> 과정에서도 에러가 난다. 알고 보니 업데이트 하면서 <em>import</em> 하는 모냥새를 바꿔버렸다.</p>
+</li>
+</ol>
+<h2 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h2><ol>
+<li><em>package.json</em> 에서 <code>&quot;expo&quot; : &quot;^33.0.0&quot;</code></li>
+<li><em>app.json</em> 에서 <code>&quot;sdkVersion&quot; : &quot;33.0.0&quot;</code></li>
+<li><code>watchman watch-del-all &amp;&amp; rm -rf node_modules &amp;&amp; rm -rf package-lock.json &amp;&amp; npm cache clean --force &amp;&amp; npm install</code><br>불필요하게 남아있는 캐시데이터 때문에 엉킴으로 고생하지 말자.</li>
+<li>이렇게 하면 이런 저런 디펜던시들이 충돌이 나면서 설치가 안된다.<br>에러 로그를 보면서 한땀한땀 고쳐야한다. 이 부분이 가장 고생이다. 각자 사용하는 모듈들이 다르기 때문에 이 부분은 스스로 잘 해결되길 바랄 수 밖에..</li>
+<li>다 되었으면 <code>npm run start --reset-cache</code></li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://devohno.github.io/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" data-id="ck14owvv40000d4ve6xkhhs5x" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "devohno"
+        },
+        "headline": "[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러",
+        "image": "https://devohno.github.io/image/android-64-bit-error.png",
+        "keywords": "Expo",
+        "genre": "Programming Expo",
+        "datePublished": "2019-09-19",
+        "dateCreated": "2019-09-19",
+        "dateModified": "2019-09-29",
+        "url": "https://devohno.github.io/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/",
+        "description": "현재 환경
+&quot;expo&quot; : &quot;31.0.4&quot;
+&quot;react&quot; : &quot;16.5.0&quot;
+&quot;firebase&quot; : &quot;^4.12.1&quot;
+
+문제
+expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에"
+        "wordCount": 199
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>Social:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/devethan91" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/devohno" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            [EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Site/">Site</a></p>
+                            <p class="item-title"><a href="/2019/09/29/HEXO-블로그-계정-정보-전환하기/" class="title">[HEXO] 블로그 계정 정보 전환하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-29T06:42:55.000Z" itemprop="datePublished">2019-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" class="title">[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T08:06:08.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" class="title">[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T02:49:19.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" class="title">[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T14:31:09.000Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Diary/">Diary</a></p>
+                            <p class="item-title"><a href="/2019/08/22/반갑습니다/" class="title">반갑습니다</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T12:51:23.000Z" itemprop="datePublished">2019-08-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Diary/">Diary</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Site/">Site</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Expo/">Expo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/React/">React</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">9월 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">8월 2019</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Expo/">Expo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/시작/">시작</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Expo/" style="font-size: 20px;">Expo</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a> <a href="/tags/시작/" style="font-size: 10px;">시작</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 devohno</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://devohno.github.io/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

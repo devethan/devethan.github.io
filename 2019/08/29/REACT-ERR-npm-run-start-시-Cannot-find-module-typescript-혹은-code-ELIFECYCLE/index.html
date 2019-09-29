@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE | 들리시나요</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React">
+    
+    <meta name="description" content="그저 나는 vscode에서 mobx의 decorator를 사용하고 싶을 뿐이었어… 미안해  상황mobx 의 decorator로 깔-끔한 개발코드를 만들어보자 로 시작했다. 깔끔했지만 vscode*에선 기분 나쁜 warning(이라 쓰고 밑줄이 거슬림)을 토해낸다. 그렇게 이런 꺼림직한 *warning을 없애기 위해서 root 경로에 tsconfig.jso">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE">
+<meta property="og:url" content="https://devohno.github.io/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/index.html">
+<meta property="og:site_name" content="들리시나요">
+<meta property="og:description" content="그저 나는 vscode에서 mobx의 decorator를 사용하고 싶을 뿐이었어… 미안해  상황mobx 의 decorator로 깔-끔한 개발코드를 만들어보자 로 시작했다. 깔끔했지만 vscode*에선 기분 나쁜 warning(이라 쓰고 밑줄이 거슬림)을 토해낸다. 그렇게 이런 꺼림직한 *warning을 없애기 위해서 root 경로에 tsconfig.jso">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-09-29T05:46:34.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE">
+<meta name="twitter:description" content="그저 나는 vscode에서 mobx의 decorator를 사용하고 싶을 뿐이었어… 미안해  상황mobx 의 decorator로 깔-끔한 개발코드를 만들어보자 로 시작했다. 깔끔했지만 vscode*에선 기분 나쁜 warning(이라 쓰고 밑줄이 거슬림)을 토해낸다. 그렇게 이런 꺼림직한 *warning을 없애기 위해서 root 경로에 tsconfig.jso">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">제 목소리가 들리시나요?</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Diary/">Diary</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Site/">Site</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Expo/">Expo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/React/">React</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/devethan">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/React/">React</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" class="article-date">
+            <time datetime="2019-08-29T14:31:09.000Z" itemprop="datePublished">2019-08-29</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/React/">React</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>그저 나는 vscode에서 mobx의 decorator를 사용하고 싶을 뿐이었어… 미안해</p>
+</blockquote>
+<h3 id="상황"><a href="#상황" class="headerlink" title="상황"></a>상황</h3><p><em><code>mobx</code> 의 <code>decorator</code>로 깔-끔한 개발코드를 만들어보자</em> 로 시작했다. 깔끔했지만 <em>vscode*에선 기분 나쁜 <code>warning</code></em>(이라 쓰고 밑줄이 거슬림)<em>을 토해낸다. 그렇게 이런 꺼림직한 *warning</em>을 없애기 위해서 <em>root</em> 경로에 <code>tsconfig.json</code> 파일을 만들었고, 거기에 무슨 의미인지도 모르는 다음과 같이 파일 설정을 넣었다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// tsconfig.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &quot;experimentalDecorators&quot;: true,</span><br><span class="line">    &quot;allowJs&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h3><p><code>npm run start</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">20 error code ELIFECYCLE</span><br><span class="line">21 error errno 1</span><br><span class="line">22 error mySideProject@0.1.0 start: `node scripts/start.js`</span><br><span class="line">22 error Exit status 1</span><br><span class="line">23 error Failed at the mySideProject@0.1.0 start script.</span><br><span class="line">23 error This is probably not a problem with npm. There is likely additional logging output above.</span><br><span class="line">24 verbose exit [ 1, true ]</span><br></pre></td></tr></table></figure>
+
+<p>저 놈의 <em>ELIFECYCLE</em> 은 정말 꼴보기 싫다. 참 친절하지 못한 코드다. <code>npm</code> 관련 에러인데 설명하기 귀찮아서 저 코드를 던지는 것 같다. <em>알아서 찾아보라고</em>, 결국 내가 스스로 찾아야한다.</p>
+<h3 id="시도"><a href="#시도" class="headerlink" title="시도"></a>시도</h3><ol>
+<li><code>npm cache clean --force &amp;&amp; npm install</code></li>
+<li><code>rm -rf node_modules &amp;&amp; rm package-lock.json &amp;&amp; npm install</code></li>
+<li><code>npm install typescript</code></li>
+</ol>
+<h3 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h3><p>결국은 typescript 모듈이 없었기 때문에 생기는 문제였다. 나는 안쓰는데? 싶어서 확인해보니 vscode 설정으로 해두었던 tsconfig.json 파일이 유일하게 관련된 파일이었다.<br><code>rm tsconfig.json &amp;&amp; npm install &amp;&amp; npm run start</code></p>
+<p>매우 잘 된다…….</p>
+<blockquote>
+<p>잠깐만, <em>decorator</em> 쓰자고 추가한 파일을 에러 잡는다고 지우면 무슨 의미지?</p>
+</blockquote>
+<p>그렇게 생각한 모두를 위해 다음 파일을 같은 내용으로 만들어보자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// jsconfig.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &quot;experimentalDecorators&quot;: true,</span><br><span class="line">    &quot;allowJs&quot;: true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>혹여나 지친 몸을 이끌고 사이드 플젝을 하고 계신 분들에게 조그마한 도움이 되었으면 좋겠다.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://devohno.github.io/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" data-id="ck14owvvj0005d4vexybo0o3o" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "devohno"
+        },
+        "headline": "[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE",
+        "image": "https://devohno.github.io",
+        "keywords": "React",
+        "genre": "Programming React",
+        "datePublished": "2019-08-29",
+        "dateCreated": "2019-08-29",
+        "dateModified": "2019-09-29",
+        "url": "https://devohno.github.io/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/",
+        "description": "
+그저 나는 vscode에서 mobx의 decorator를 사용하고 싶을 뿐이었어… 미안해
+
+상황mobx 의 decorator로 깔-끔한 개발코드를 만들어보자 로 시작했다. 깔끔했지만 vscode*에선 기분 나쁜 warning(이라 쓰고 밑줄이 거슬림)을 토해낸다. 그렇게 이런 꺼림직한 *warning을 없애기 위해서 root 경로에 tsconfig.jso"
+        "wordCount": 292
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>Social:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/devethan91" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/devohno" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            [EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/08/22/반갑습니다/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">반갑습니다</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Site/">Site</a></p>
+                            <p class="item-title"><a href="/2019/09/29/HEXO-블로그-계정-정보-전환하기/" class="title">[HEXO] 블로그 계정 정보 전환하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-29T06:42:55.000Z" itemprop="datePublished">2019-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" class="title">[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T08:06:08.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" class="title">[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T02:49:19.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" class="title">[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T14:31:09.000Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Diary/">Diary</a></p>
+                            <p class="item-title"><a href="/2019/08/22/반갑습니다/" class="title">반갑습니다</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T12:51:23.000Z" itemprop="datePublished">2019-08-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Diary/">Diary</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Site/">Site</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Expo/">Expo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/React/">React</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">9월 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">8월 2019</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Expo/">Expo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/시작/">시작</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Expo/" style="font-size: 20px;">Expo</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a> <a href="/tags/시작/" style="font-size: 10px;">시작</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 devohno</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://devohno.github.io/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

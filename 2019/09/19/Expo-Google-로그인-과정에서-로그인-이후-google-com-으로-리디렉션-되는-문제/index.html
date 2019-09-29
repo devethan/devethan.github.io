@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제 | 들리시나요</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Expo">
+    
+    <meta name="description" content="친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.  문제확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기">
+<meta name="keywords" content="Expo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제">
+<meta property="og:url" content="https://devohno.github.io/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/index.html">
+<meta property="og:site_name" content="들리시나요">
+<meta property="og:description" content="친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.  문제확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-09-29T05:46:34.395Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제">
+<meta name="twitter:description" content="친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.  문제확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">제 목소리가 들리시나요?</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Diary/">Diary</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Site/">Site</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Expo/">Expo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/React/">React</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="https://about.me/devethan">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Expo/">Expo</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" class="article-date">
+            <time datetime="2019-09-19T08:06:08.000Z" itemprop="datePublished">2019-09-19</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Expo/">Expo</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p>친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.</p>
+</blockquote>
+<h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기 로그인이 말썽이면 얼마나 서글플까 싶다.</p>
+<p>Expo SDK 31버전 이후부터 구글 로그인에 필요한 설정파일 (<code>googleServiceConfig</code>)에 <code>redirectUrl</code> 이라는 항목이 생겼다. 그래서 기존 설정파일로는 이 경로를 세팅할 수 없었고 기본값으로 <code>google.com</code>이 지정이 된다. 이로 인해 <code>await Google.logInAsync(googleServiceConfig)</code> 이 부분이 <em>pending</em> 되고 사용자들은 멀뚱히 구글의 메인페이지만 보게 된다.</p>
+<blockquote>
+<p>뭐 어쩌라는거지. 여봐요 로그인이 안되요.</p>
+</blockquote>
+<h2 id="해결"><a href="#해결" class="headerlink" title="해결"></a>해결</h2><ol>
+<li><p><code>expo install expo-app-auth</code></p>
+<p><em>업데이트 된 <code>expo-cli</code>에서는 <code>expo</code> 관련 모듈 설치를 편하게 할 수 있도록 <code>expo install</code> 을 통해 가능하도록 해주었다.</em></p>
+</li>
+<li><p><code>googleServiceConfig</code>파일 주입</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// signInScreen.js</span><br><span class="line">...</span><br><span class="line">import * as AppAuth from &apos;expo-app-auth&apos;;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">const googleServiceConfig = &#123;</span><br><span class="line">	...</span><br><span class="line">	redirectUrl:`$&#123;AppAuth.OAuthRedirect&#125;:/oauth2redirect/google`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">await Google.logInAsync(googleServiceConfig);</span><br></pre></td></tr></table></figure>
+
+<p><code>expo-app-auth</code> 라이브러리에서 제공하는 <code>AppAuth</code>를 통해서 디바이스의 <code>id</code>값(<code>com.company.somewhere</code>)을 포함하는 리디렉션 주소를 명시함으로서 구글 로그인 이후 <code>google.com</code> 이 아닌 앱 내부로 돌아오게 해준다.</p>
+<h2 id="참조"><a href="#참조" class="headerlink" title="참조"></a>참조</h2><p><a href="https://github.com/expo/expo/issues/4655#issuecomment-510081708" target="_blank" rel="noopener">https://github.com/expo/expo/issues/4655#issuecomment-510081708</a><br><a href="https://github.com/expo/expo/pull/4671#issue-290264117" target="_blank" rel="noopener">https://github.com/expo/expo/pull/4671#issue-290264117</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://devohno.github.io/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" data-id="ck14owvvh0004d4vedxcw3aj1" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "devohno"
+        },
+        "headline": "[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제",
+        "image": "https://devohno.github.io",
+        "keywords": "Expo",
+        "genre": "Programming Expo",
+        "datePublished": "2019-09-19",
+        "dateCreated": "2019-09-19",
+        "dateModified": "2019-09-29",
+        "url": "https://devohno.github.io/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/",
+        "description": "
+친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.
+
+문제확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기"
+        "wordCount": 188
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>Social:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/devethan91" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/devohno" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/29/HEXO-블로그-계정-정보-전환하기/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            [HEXO] 블로그 계정 정보 전환하기
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Site/">Site</a></p>
+                            <p class="item-title"><a href="/2019/09/29/HEXO-블로그-계정-정보-전환하기/" class="title">[HEXO] 블로그 계정 정보 전환하기</a></p>
+                            <p class="item-date"><time datetime="2019-09-29T06:42:55.000Z" itemprop="datePublished">2019-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/" class="title">[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T08:06:08.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a></p>
+                            <p class="item-title"><a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/" class="title">[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러</a></p>
+                            <p class="item-date"><time datetime="2019-09-19T02:49:19.000Z" itemprop="datePublished">2019-09-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/29/REACT-ERR-npm-run-start-시-Cannot-find-module-typescript-혹은-code-ELIFECYCLE/" class="title">[REACT-ERR] npm run start 시 Cannot find module &#39;typescript&#39; 혹은 code ELIFECYCLE</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T14:31:09.000Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Diary/">Diary</a></p>
+                            <p class="item-title"><a href="/2019/08/22/반갑습니다/" class="title">반갑습니다</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T12:51:23.000Z" itemprop="datePublished">2019-08-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Diary/">Diary</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Site/">Site</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Expo/">Expo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/React/">React</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">9월 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">8월 2019</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Expo/">Expo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/소개/">소개</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/시작/">시작</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Expo/" style="font-size: 20px;">Expo</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/소개/" style="font-size: 10px;">소개</a> <a href="/tags/시작/" style="font-size: 10px;">시작</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 devohno</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://devohno.github.io/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
