@@ -6,7 +6,7 @@
     
 
     
-    <title>[TDD] 3일차 - 테스트 시작 | 들리시나요</title>
+    <title>[TDD] 4일차 - 테스트 시작 | 들리시나요</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -15,15 +15,15 @@
     <meta name="description" content="Describe it Make it fail Make it green Refactoring (Optional)   이제 환경 구성을 마치고 본격적으로 테스트를 시작한다. 제일 먼저 시작해야할 것은 개발할 앱의 구성 요소를 빠르게 스케치하고, 컴포넌트를 정의하는 것이다. 예를 들어 이번 스터디에서 우리가 타겟으로 하는 앱이 Todo-list 앱 이라면 다">
 <meta name="keywords" content="TDD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[TDD] 3일차 - 테스트 시작">
-<meta property="og:url" content="https://devohno.github.io/2019/10/12/TDD-3일차-테스트-시작/index.html">
+<meta property="og:title" content="[TDD] 4일차 - 테스트 시작">
+<meta property="og:url" content="https://devohno.github.io/2019/10/12/TDD-4일차-테스트-시작/index.html">
 <meta property="og:site_name" content="들리시나요">
 <meta property="og:description" content="Describe it Make it fail Make it green Refactoring (Optional)   이제 환경 구성을 마치고 본격적으로 테스트를 시작한다. 제일 먼저 시작해야할 것은 개발할 앱의 구성 요소를 빠르게 스케치하고, 컴포넌트를 정의하는 것이다. 예를 들어 이번 스터디에서 우리가 타겟으로 하는 앱이 Todo-list 앱 이라면 다">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://devohno.github.io/image/20191012_01.jpg">
-<meta property="og:updated_time" content="2019-10-11T16:59:15.713Z">
+<meta property="og:updated_time" content="2019-10-12T09:32:32.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[TDD] 3일차 - 테스트 시작">
+<meta name="twitter:title" content="[TDD] 4일차 - 테스트 시작">
 <meta name="twitter:description" content="Describe it Make it fail Make it green Refactoring (Optional)   이제 환경 구성을 마치고 본격적으로 테스트를 시작한다. 제일 먼저 시작해야할 것은 개발할 앱의 구성 요소를 빠르게 스케치하고, 컴포넌트를 정의하는 것이다. 예를 들어 이번 스터디에서 우리가 타겟으로 하는 앱이 Todo-list 앱 이라면 다">
 <meta name="twitter:image" content="https://devohno.github.io/image/20191012_01.jpg">
     
@@ -143,14 +143,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-TDD-3일차-테스트-시작" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-TDD-4일차-테스트-시작" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        [TDD] 3일차 - 테스트 시작
+        [TDD] 4일차 - 테스트 시작
         </h1>
     
 
@@ -160,7 +160,7 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/10/12/TDD-3일차-테스트-시작/" class="article-date">
+        <a href="/2019/10/12/TDD-4일차-테스트-시작/" class="article-date">
             <time datetime="2019-10-11T16:58:18.000Z" itemprop="datePublished">2019-10-12</time>
         </a>
     </div>
@@ -215,6 +215,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Test Suites: 1 passed, 1 total	// green</span><br><span class="line">Tests:       1 passed, 1 total	// green</span><br></pre></td></tr></table></figure>
 
 <p>이러한 방식으로 <code>Make it fail &gt; Make it green</code> 의 반복을 통해 개발을 해나가는 것을 <code>Test Driven Development</code> 라고 한다.</p>
+<h4 id="나머지-테스트도-작성"><a href="#나머지-테스트도-작성" class="headerlink" title="나머지 테스트도 작성"></a>나머지 테스트도 작성</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// src/App.js</span><br><span class="line">...</span><br><span class="line">// AddToDo</span><br><span class="line">it(&apos;is AddToDo visable?&apos;, () =&gt; &#123;</span><br><span class="line">  expect(wrapper.find(&apos;AddToDo&apos;)).toHaveLength(1);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// ToDoList</span><br><span class="line">it(&apos;is ToDoList visable?&apos;, () =&gt; &#123;</span><br><span class="line">  expect(wrapper.find(&apos;ToDoList&apos;)).toHaveLength(1);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 
         </div>
         <footer class="article-footer">
@@ -222,7 +224,7 @@
 
 
 
-    <a data-url="https://devohno.github.io/2019/10/12/TDD-3일차-테스트-시작/" data-id="ck1mdkmeo000a2rveoun60ev2" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://devohno.github.io/2019/10/12/TDD-4일차-테스트-시작/" data-id="ck1nbitt40000q8veyp7i50pj" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -292,14 +294,14 @@
             "@type": "Person",
             "name": "devohno"
         },
-        "headline": "[TDD] 3일차 - 테스트 시작",
+        "headline": "[TDD] 4일차 - 테스트 시작",
         "image": "https://devohno.github.io/image/20191012_01.jpg",
         "keywords": "TDD",
         "genre": "Study TDD",
         "datePublished": "2019-10-12",
         "dateCreated": "2019-10-12",
         "dateModified": "2019-10-12",
-        "url": "https://devohno.github.io/2019/10/12/TDD-3일차-테스트-시작/",
+        "url": "https://devohno.github.io/2019/10/12/TDD-4일차-테스트-시작/",
         "description": "
 
 Describe it
@@ -310,7 +312,7 @@ Refactoring (Optional)
 
 이제 환경 구성을 마치고 본격적으로 테스트를 시작한다.
 제일 먼저 시작해야할 것은 개발할 앱의 구성 요소를 빠르게 스케치하고, 컴포넌트를 정의하는 것이다. 예를 들어 이번 스터디에서 우리가 타겟으로 하는 앱이 Todo-list 앱 이라면 다"
-        "wordCount": 354
+        "wordCount": 405
     }
 </script>
 
@@ -384,7 +386,7 @@ Refactoring (Optional)
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/TDD/">TDD</a></p>
-                            <p class="item-title"><a href="/2019/10/12/TDD-3일차-테스트-시작/" class="title">[TDD] 3일차 - 테스트 시작</a></p>
+                            <p class="item-title"><a href="/2019/10/12/TDD-4일차-테스트-시작/" class="title">[TDD] 4일차 - 테스트 시작</a></p>
                             <p class="item-date"><time datetime="2019-10-11T16:58:18.000Z" itemprop="datePublished">2019-10-12</time></p>
                         </div>
                     </li>
@@ -520,7 +522,7 @@ Refactoring (Optional)
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://devohno.github.io/2019/10/12/TDD-3일차-테스트-시작/';
+    var disqus_url = 'https://devohno.github.io/2019/10/12/TDD-4일차-테스트-시작/';
     
     (function() {
     var dsq = document.createElement('script');
