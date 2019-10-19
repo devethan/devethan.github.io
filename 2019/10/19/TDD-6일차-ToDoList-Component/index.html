@@ -6,20 +6,24 @@
     
 
     
-    <title>카테고리: Expo | 들리시나요</title>
+    <title>[TDD] 6일차 - ToDoList Component | 들리시나요</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="개인블로그">
-<meta property="og:type" content="website">
-<meta property="og:title" content="들리시나요">
-<meta property="og:url" content="https://devohno.github.io/categories/Programming/Expo/index.html">
+        <meta name="keywords" content="TDD">
+    
+    <meta name="description" content="App 컴포넌트의 두번째 구성인 ToDoList 컴포넌트의 테스트 및 개발을 시작한다.  Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성12345678// __tests__/ToDoList-test.js// Rendering Testdescribe(&amp;quot;Rendering&amp;quot;, () =&amp;gt; &amp;#123;">
+<meta name="keywords" content="TDD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[TDD] 6일차 - ToDoList Component">
+<meta property="og:url" content="https://devohno.github.io/2019/10/19/TDD-6일차-ToDoList-Component/index.html">
 <meta property="og:site_name" content="들리시나요">
-<meta property="og:description" content="개인블로그">
+<meta property="og:description" content="App 컴포넌트의 두번째 구성인 ToDoList 컴포넌트의 테스트 및 개발을 시작한다.  Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성12345678// __tests__/ToDoList-test.js// Rendering Testdescribe(&amp;quot;Rendering&amp;quot;, () =&amp;gt; &amp;#123;">
 <meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-10-19T09:49:44.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="들리시나요">
-<meta name="twitter:description" content="개인블로그">
+<meta name="twitter:title" content="[TDD] 6일차 - ToDoList Component">
+<meta name="twitter:description" content="App 컴포넌트의 두번째 구성인 ToDoList 컴포넌트의 테스트 및 개발을 시작한다.  Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성12345678// __tests__/ToDoList-test.js// Rendering Testdescribe(&amp;quot;Rendering&amp;quot;, () =&amp;gt; &amp;#123;">
     
 
     
@@ -133,91 +137,179 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>카테고리: <em class="page-title-link">Expo</em>
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/TDD/">TDD</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-TDD-6일차-ToDoList-Component" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a>
-            </div>
-            <div class="date"><time datetime="2019-09-19T08:06:08.000Z" itemprop="datePublished">2019-09-19</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/19/Expo-Google-로그인-과정에서-로그인-이후-google-com-으로-리디렉션-되는-문제/">[EXPO] Google 로그인 과정에서 로그인 이후 google.com 으로 리디렉션 되는 문제</a>
+        [TDD] 6일차 - ToDoList Component
         </h1>
     
 
-        <p class="article-excerpt">
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/10/19/TDD-6일차-ToDoList-Component/" class="article-date">
+            <time datetime="2019-10-19T09:34:42.000Z" itemprop="datePublished">2019-10-19</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/TDD/">TDD</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><code>App</code> 컴포넌트의 두번째 구성인 <code>ToDoList</code> 컴포넌트의 테스트 및 개발을 시작한다. </p>
+<h2 id="Rendering-test"><a href="#Rendering-test" class="headerlink" title="Rendering test"></a>Rendering test</h2><blockquote>
+<p>앱이 의도한대로 잘 그려지고 있는가?</p>
+</blockquote>
+<h3 id="테스트-코드-작성"><a href="#테스트-코드-작성" class="headerlink" title="테스트 코드 작성"></a>테스트 코드 작성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// __tests__/ToDoList-test.js</span><br><span class="line">// Rendering Test</span><br><span class="line">describe(&quot;Rendering&quot;, () =&gt; &#123;</span><br><span class="line">    const wrapper = shallow(&lt;ToDoList /&gt;)</span><br><span class="line">    it(&quot;Should render a flat list&quot;, () =&gt; &#123;</span><br><span class="line">        expect(wrapper.find(&apos;FlatList&apos;)).toHaveLength(1);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과"><a href="#테스트-결과" class="headerlink" title="테스트 결과"></a>테스트 결과</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Rendering</span><br><span class="line">    ✕ Should render a flat list (6ms)</span><br><span class="line"></span><br><span class="line">  ● Rendering › Should render a flat list</span><br><span class="line"></span><br><span class="line">    expect(received).toHaveLength(expected)</span><br><span class="line"></span><br><span class="line">    Expected length: 1</span><br><span class="line">    Received length: 0</span><br><span class="line">    Received object: &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Make-it-green"><a href="#Make-it-green" class="headerlink" title="Make it green"></a>Make it green</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// src/components/ToDoList/index.js</span><br><span class="line">...</span><br><span class="line">import &#123; FlatList &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">const ToDoList = () =&gt; &#123;</span><br><span class="line">  return &lt;FlatList&gt;&lt;/FlatList&gt;;</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과-1"><a href="#테스트-결과-1" class="headerlink" title="테스트 결과"></a>테스트 결과</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rendering</span><br><span class="line">    ✓ Should render a flat list (6ms)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Interaction-test"><a href="#Interaction-test" class="headerlink" title="Interaction test"></a>Interaction test</h2><blockquote>
+<p>컴포넌트 내에서의 interaction 이 의도한대로 진행되는가?</p>
+</blockquote>
+<h3 id="테스트-코드-작성-1"><a href="#테스트-코드-작성-1" class="headerlink" title="테스트 코드 작성"></a>테스트 코드 작성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// __tests__/ToDoList-test.js</span><br><span class="line">// Interaction test</span><br><span class="line">describe(&quot;Interaction&quot;, () =&gt; &#123;</span><br><span class="line">    let wrapper;</span><br><span class="line">    let props;</span><br><span class="line"></span><br><span class="line">    beforeEach(() =&gt; &#123;</span><br><span class="line">        props = &#123;</span><br><span class="line">            items: [</span><br><span class="line">                &#123;</span><br><span class="line">                    text: &quot;some todo item 1&quot;,</span><br><span class="line">                    complete: false</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    text: &quot;some todo item 2&quot;,</span><br><span class="line">                    complete: true</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">        wrapper = shallow(&lt;ToDoList &#123;...props&#125; /&gt;);</span><br><span class="line">    &#125;)</span><br><span class="line">    it(&apos;should pass props to FlatList&apos;, () =&gt; &#123;</span><br><span class="line">        expect(wrapper.find(&apos;FlatList&apos;).prop(&apos;data&apos;)).toBe(props.items);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과-2"><a href="#테스트-결과-2" class="headerlink" title="테스트 결과"></a>테스트 결과</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Interaction</span><br><span class="line">    ✕ should pass props to FlatList (4ms)</span><br><span class="line"></span><br><span class="line">  ● Interaction › should pass props to FlatList</span><br><span class="line"></span><br><span class="line">    expect(received).toBe(expected) // Object.is equality</span><br><span class="line"></span><br><span class="line">    Expected: [&#123;&quot;complete&quot;: false, &quot;text&quot;: &quot;some todo item 1&quot;&#125;, &#123;&quot;complete&quot;: true, &quot;text&quot;: &quot;some todo item 2&quot;&#125;]</span><br><span class="line">    Received: undefined</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Make-it-green-1"><a href="#Make-it-green-1" class="headerlink" title="Make it green"></a>Make it green</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// src/components/ToDoList/index.js</span><br><span class="line">...</span><br><span class="line">import &#123; FlatList &#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">const ToDoList = (&#123;items&#125;) =&gt; &#123;</span><br><span class="line">  return &lt;FlatList data=&#123;items&#125;&gt;&lt;/FlatList&gt;;</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과-3"><a href="#테스트-결과-3" class="headerlink" title="테스트 결과"></a>테스트 결과</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Interaction</span><br><span class="line">    ✓ should pass props to FlatList (1ms)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Component 의 Rendering &amp; Interaction 에 대한 구상 &gt; 테스트 코드 작성 &gt; Make it fail &gt; Make it green &gt; Refactoring</p>
+</blockquote>
+
+        </div>
+        <footer class="article-footer">
             
-친절하지 못한 업데이트로 인한 에러는 해결해도 뭔가 시원하지 않다. 여전히 찜-찜하다.
 
-문제확실히 잘 모르겠다. 내가 이해한 바로는 Expo SDK 32 부터 이런 문제가 있는 거 같은데, 깃허브에 이미 이슈로 등록되어있고 고쳐주길 기다리는 사람과, 급해서 자기가 알아보고 의견을 제시하는 두 부류의 사람들이 참여 중이었다. 서비스 업데이트 하는데 갑자기
-        </p>
+
+
+    <a data-url="https://devohno.github.io/2019/10/19/TDD-6일차-ToDoList-Component/" data-id="ck1xdp7xf000t25vejitfompv" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "devohno"
+        },
+        "headline": "[TDD] 6일차 - ToDoList Component",
+        "image": "https://devohno.github.io",
+        "keywords": "TDD",
+        "genre": "Study TDD",
+        "datePublished": "2019-10-19",
+        "dateCreated": "2019-10-19",
+        "dateModified": "2019-10-19",
+        "url": "https://devohno.github.io/2019/10/19/TDD-6일차-ToDoList-Component/",
+        "description": "App 컴포넌트의 두번째 구성인 ToDoList 컴포넌트의 테스트 및 개발을 시작한다. 
+Rendering test
+앱이 의도한대로 잘 그려지고 있는가?
+
+테스트 코드 작성12345678// __tests__/ToDoList-test.js// Rendering Testdescribe(&quot;Rendering&quot;, () =&gt; &#123;   ",
+        "wordCount": 719
+    }
+</script>
+
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Expo/">Expo</a>
-            </div>
-            <div class="date"><time datetime="2019-09-19T02:49:19.000Z" itemprop="datePublished">2019-09-19</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/09/19/EXPO-안드로이드-배포-시-The-releases-is-not-compliant-with-the-Google-Play-64-bit-requirement-에러/">[EXPO] 안드로이드 배포 시 &#39;The releases is not compliant with the Google Play 64-bit requirement&#39; 에러</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            현재 환경
-&quot;expo&quot; : &quot;31.0.4&quot;
-&quot;react&quot; : &quot;16.5.0&quot;
-&quot;firebase&quot; : &quot;^4.12.1&quot;
-
-문제
-expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배포하려고 하는데 구글 콘솔에서 다음과 같은 에
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
+
     
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -248,6 +340,19 @@ expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배�
                 
             </ul>
         </div>
+        
+            
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/19/마조히즘-근육-훈련/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">마조히즘 근육 훈련</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
         
         <div class="widgets-container">
             
@@ -401,11 +506,13 @@ expo build:android 를 통해서 빌드한 apk 파일을 구글플레이에 배�
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://devohno.github.io/2019/10/19/TDD-6일차-ToDoList-Component/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
