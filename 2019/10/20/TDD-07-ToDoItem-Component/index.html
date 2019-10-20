@@ -6,24 +6,24 @@
     
 
     
-    <title>시작을 알립니다. | 들리시나요</title>
+    <title>[TDD] 07 - ToDoItem Component | 들리시나요</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="시작">
+        <meta name="keywords" content="TDD">
     
-    <meta name="description" content="시작이 반이다. 반이나 와버렸네?  몇 달전에 야심차게 시작했다가 글 올리는데에 대한 게으름과 기술에 대한 이해도가 떨어지는 탓에 아무것도 하지 못했던 블로그를 시작하려고 합니다. 들어주는이, 반응해주는 이 없지만 혼자라도 주저리 주저리 떠들어보려고 합니다. 주저리 주저리 끈기있게 저의 성장 기록으로 채우는 것을 지켜봐주세요.">
-<meta name="keywords" content="시작">
+    <meta name="description" content="ToDoList 컴포넌트의 자식 컴포넌트인 ToDoItem 컴포넌트의 테스트 Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성1234567891011121314151617// __tests__/ToDoItem-test.js...import ToDoItem from &amp;apos;../src/components/ToDoItem&amp;">
+<meta name="keywords" content="TDD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="시작을 알립니다.">
-<meta property="og:url" content="https://devohno.github.io/2019/08/21/시작을-알립니다/index.html">
+<meta property="og:title" content="[TDD] 07 - ToDoItem Component">
+<meta property="og:url" content="https://devohno.github.io/2019/10/20/TDD-07-ToDoItem-Component/index.html">
 <meta property="og:site_name" content="들리시나요">
-<meta property="og:description" content="시작이 반이다. 반이나 와버렸네?  몇 달전에 야심차게 시작했다가 글 올리는데에 대한 게으름과 기술에 대한 이해도가 떨어지는 탓에 아무것도 하지 못했던 블로그를 시작하려고 합니다. 들어주는이, 반응해주는 이 없지만 혼자라도 주저리 주저리 떠들어보려고 합니다. 주저리 주저리 끈기있게 저의 성장 기록으로 채우는 것을 지켜봐주세요.">
+<meta property="og:description" content="ToDoList 컴포넌트의 자식 컴포넌트인 ToDoItem 컴포넌트의 테스트 Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성1234567891011121314151617// __tests__/ToDoItem-test.js...import ToDoItem from &amp;apos;../src/components/ToDoItem&amp;">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-09-29T05:46:34.397Z">
+<meta property="og:updated_time" content="2019-10-20T07:29:09.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="시작을 알립니다.">
-<meta name="twitter:description" content="시작이 반이다. 반이나 와버렸네?  몇 달전에 야심차게 시작했다가 글 올리는데에 대한 게으름과 기술에 대한 이해도가 떨어지는 탓에 아무것도 하지 못했던 블로그를 시작하려고 합니다. 들어주는이, 반응해주는 이 없지만 혼자라도 주저리 주저리 떠들어보려고 합니다. 주저리 주저리 끈기있게 저의 성장 기록으로 채우는 것을 지켜봐주세요.">
+<meta name="twitter:title" content="[TDD] 07 - ToDoItem Component">
+<meta name="twitter:description" content="ToDoList 컴포넌트의 자식 컴포넌트인 ToDoItem 컴포넌트의 테스트 Rendering test 앱이 의도한대로 잘 그려지고 있는가?  테스트 코드 작성1234567891011121314151617// __tests__/ToDoItem-test.js...import ToDoItem from &amp;apos;../src/components/ToDoItem&amp;">
     
 
     
@@ -137,19 +137,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Blog/Diary/">Diary</a>
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/TDD/">TDD</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-시작을-알립니다" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-TDD-07-ToDoItem-Component" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        시작을 알립니다.
+        [TDD] 07 - ToDoItem Component
         </h1>
     
 
@@ -159,8 +159,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/21/시작을-알립니다/" class="article-date">
-            <time datetime="2019-08-20T15:17:55.000Z" itemprop="datePublished">2019-08-21</time>
+        <a href="/2019/10/20/TDD-07-ToDoItem-Component/" class="article-date">
+            <time datetime="2019-10-20T07:26:00.000Z" itemprop="datePublished">2019-10-20</time>
         </a>
     </div>
 
@@ -169,18 +169,42 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/시작/">시작</a>
+        <a class="tag-link" href="/tags/TDD/">TDD</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <blockquote>
-<p>시작이 반이다. 반이나 와버렸네?</p>
+            <p><code>ToDoList</code> 컴포넌트의 자식 컴포넌트인 <code>ToDoItem</code> 컴포넌트의 테스트</p>
+<h2 id="Rendering-test"><a href="#Rendering-test" class="headerlink" title="Rendering test"></a>Rendering test</h2><blockquote>
+<p>앱이 의도한대로 잘 그려지고 있는가?</p>
 </blockquote>
-<p>몇 달전에 야심차게 시작했다가 글 올리는데에 대한 게으름과 기술에 대한 이해도가 떨어지는 탓에 아무것도 하지 못했던 블로그를 시작하려고 합니다. 들어주는이, 반응해주는 이 없지만 혼자라도 주저리 주저리 떠들어보려고 합니다.</p>
-<p>주저리 주저리 끈기있게 저의 성장 기록으로 채우는 것을 지켜봐주세요.</p>
+<h3 id="테스트-코드-작성"><a href="#테스트-코드-작성" class="headerlink" title="테스트 코드 작성"></a>테스트 코드 작성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// __tests__/ToDoItem-test.js</span><br><span class="line">...</span><br><span class="line">import ToDoItem from &apos;../src/components/ToDoItem&apos;;</span><br><span class="line"></span><br><span class="line">describe(&quot;Rendering&quot;, () =&gt; &#123;</span><br><span class="line">    let wrapper;</span><br><span class="line">    beforeEach(() =&gt; &#123;</span><br><span class="line">        wrapper = shallow(&lt;ToDoItem /&gt;)</span><br><span class="line">    &#125;)</span><br><span class="line">    it(&quot;Should render a Text component&quot;, () =&gt; &#123;</span><br><span class="line">        expect(wrapper.find(&apos;Text&apos;)).toHaveLength(1);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&quot;Should render two buttons&quot;, () =&gt; &#123;</span><br><span class="line">        expect(wrapper.find(&apos;Button&apos;)).toHaveLength(2);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과-1"><a href="#테스트-결과-1" class="headerlink" title="테스트 결과 1"></a>테스트 결과 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FAIL  __tests__/ToDoItem-test.js</span><br><span class="line">  ● Test suite failed to run</span><br><span class="line"></span><br><span class="line">    Cannot find module &apos;../src/components/ToDoItem&apos; from &apos;ToDoItem-test.js&apos;</span><br><span class="line"></span><br><span class="line">       5 | import &apos;react-native&apos;;</span><br><span class="line">       6 | import React from &apos;react&apos;;</span><br><span class="line">    &gt;  7 | import ToDoItem from &apos;../src/components/ToDoItem&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>정의되지 않은 <code>ToDoItem</code> 모듈 에러 발생. 아래와 같이 컴포넌트 작성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// src/components/ToDoItem/index.js</span><br><span class="line">...</span><br><span class="line">const ToDoItem = () =&gt; &#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과-2"><a href="#테스트-결과-2" class="headerlink" title="테스트 결과 2"></a>테스트 결과 2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> FAIL  __tests__/ToDoItem-test.js</span><br><span class="line">  Rendering</span><br><span class="line">    ✕ Should render a Text component (9ms)</span><br><span class="line">    ✕ Should render two buttons (1ms)</span><br><span class="line"></span><br><span class="line">  ● Rendering › Should render a Text component</span><br><span class="line"></span><br><span class="line">    expect(received).toHaveLength(expected)</span><br><span class="line"></span><br><span class="line">    Expected length: 1</span><br><span class="line">    Received length: 0</span><br><span class="line">    Received object: &#123;&#125;</span><br><span class="line">...</span><br><span class="line">  ● Rendering › Should render two buttons</span><br><span class="line"></span><br><span class="line">    expect(received).toHaveLength(expected)</span><br><span class="line"></span><br><span class="line">    Expected length: 2</span><br><span class="line">    Received length: 0</span><br><span class="line">    Received object: &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Make-it-green"><a href="#Make-it-green" class="headerlink" title="Make it green"></a>Make it green</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// src/components/ToDoList/index.js</span><br><span class="line">...</span><br><span class="line">import &#123;View, Text, Button&#125; from &apos;react-native&apos;;</span><br><span class="line"></span><br><span class="line">const ToDoItem = () =&gt; &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;View&gt;</span><br><span class="line">      &lt;Text&gt;&lt;/Text&gt;</span><br><span class="line">      &lt;Button&gt;&lt;/Button&gt;</span><br><span class="line">      &lt;Button&gt;&lt;/Button&gt;</span><br><span class="line">    &lt;/View&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="테스트-결과"><a href="#테스트-결과" class="headerlink" title="테스트 결과"></a>테스트 결과</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PASS  __tests__/ToDoItem-test.js</span><br><span class="line">  Rendering</span><br><span class="line">    ✓ Should render a Text component (536ms)</span><br><span class="line">    ✓ Should render two buttons (1ms)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Interaction-test"><a href="#Interaction-test" class="headerlink" title="Interaction test"></a>Interaction test</h2><blockquote>
+<p>컴포넌트 내에서의 interaction 이 의도한대로 진행되는가?</p>
+</blockquote>
+<h3 id="테스트-코드-작성-1"><a href="#테스트-코드-작성-1" class="headerlink" title="테스트 코드 작성"></a>테스트 코드 작성</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// Interaction</span><br><span class="line">describe(&apos;Interaction&apos;, () =&gt; &#123;</span><br><span class="line">  let wrapper;</span><br><span class="line">  let props;</span><br><span class="line"></span><br><span class="line">	// Complete feature</span><br><span class="line">  describe(&apos;Complete feature&apos;, () =&gt; &#123;</span><br><span class="line">    beforeEach(() =&gt; &#123;</span><br><span class="line">      props = &#123;</span><br><span class="line">        index: 0,</span><br><span class="line">        item: &#123;text: &apos;first ToDoItem&apos;, completed: false&#125;,</span><br><span class="line">        onCompleted: jest.fn(),</span><br><span class="line">      &#125;;</span><br><span class="line">      wrapper = shallow(&lt;ToDoItem &#123;...props&#125; /&gt;);</span><br><span class="line">      wrapper.find(&apos;Button&apos;).at(0).prop(&apos;onPress&apos;)();</span><br><span class="line">    &#125;);</span><br><span class="line">    it(&quot;should call &apos;onCompleted&apos; callback with index&quot;, () =&gt; &#123;</span><br><span class="line">      expect(props.onCompleted).toHaveBeenCalledTimes(1);</span><br><span class="line">      expect(props.onCompleted).toHaveBeenCalledWith(props.index);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">	// Complete feature</span><br><span class="line">  describe(&apos;Delete feature&apos;, () =&gt; &#123;</span><br><span class="line">    beforeEach(() =&gt; &#123;</span><br><span class="line">      props = &#123;</span><br><span class="line">        index: 0,</span><br><span class="line">        item: &#123;text: &apos;first ToDoItem&apos;, completed: false&#125;,</span><br><span class="line">        onDeleted: jest.fn(),</span><br><span class="line">      &#125;;</span><br><span class="line">      wrapper = shallow(&lt;ToDoItem &#123;...props&#125; /&gt;);</span><br><span class="line">      wrapper.find(&apos;Button&apos;).at(1).prop(&apos;onPress&apos;)();</span><br><span class="line">    &#125;);</span><br><span class="line">    it(&quot;should call &apos;onDeleted&apos; callback with index&quot;, () =&gt; &#123;</span><br><span class="line">      expect(props.onDeleted).toHaveBeenCalledTimes(1);</span><br><span class="line">      expect(props.onDeleted).toHaveBeenCalledWith(props.index);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Make-it-green-1"><a href="#Make-it-green-1" class="headerlink" title="Make it green"></a>Make it green</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const ToDoItem = (&#123;item: completed, onCompleted, onDeleted, index = 0&#125;) =&gt; &#123;</span><br><span class="line">  function _onPress() &#123;</span><br><span class="line">    onCompleted(index);</span><br><span class="line">  &#125;</span><br><span class="line">  function _onDeleted() &#123;</span><br><span class="line">    onDeleted(index);</span><br><span class="line">  &#125;</span><br><span class="line">  return (</span><br><span class="line">    &lt;View style=&#123;!completed? styles.default : styles.completed&#125;&gt;</span><br><span class="line">      &lt;Text&gt;&lt;/Text&gt;</span><br><span class="line">      &lt;Button title=&quot;Add&quot; onPress=&#123;_onPress&#125;&gt;&lt;/Button&gt;</span><br><span class="line">      &lt;Button title=&quot;Delete&quot; onPress=&#123;_onDeleted&#125;&gt;&lt;/Button&gt;</span><br><span class="line">    &lt;/View&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>점점 포스팅이 귀찮아진다. 급한 성질 탓….</p>
+</blockquote>
 
         </div>
         <footer class="article-footer">
@@ -188,7 +212,7 @@
 
 
 
-    <a data-url="https://devohno.github.io/2019/08/21/시작을-알립니다/" data-id="ck1yo3hnm001350ve7m5m7v1p" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://devohno.github.io/2019/10/20/TDD-07-ToDoItem-Component/" data-id="ck1yo3hmu000550veo4jt0h8j" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -258,21 +282,20 @@
             "@type": "Person",
             "name": "devohno"
         },
-        "headline": "시작을 알립니다.",
+        "headline": "[TDD] 07 - ToDoItem Component",
         "image": "https://devohno.github.io",
-        "keywords": "시작",
-        "genre": "Blog Diary",
-        "datePublished": "2019-08-21",
-        "dateCreated": "2019-08-21",
-        "dateModified": "2019-09-29",
-        "url": "https://devohno.github.io/2019/08/21/시작을-알립니다/",
-        "description": "
-시작이 반이다. 반이나 와버렸네?
+        "keywords": "TDD",
+        "genre": "Study TDD",
+        "datePublished": "2019-10-20",
+        "dateCreated": "2019-10-20",
+        "dateModified": "2019-10-20",
+        "url": "https://devohno.github.io/2019/10/20/TDD-07-ToDoItem-Component/",
+        "description": "ToDoList 컴포넌트의 자식 컴포넌트인 ToDoItem 컴포넌트의 테스트
+Rendering test
+앱이 의도한대로 잘 그려지고 있는가?
 
-몇 달전에 야심차게 시작했다가 글 올리는데에 대한 게으름과 기술에 대한 이해도가 떨어지는 탓에 아무것도 하지 못했던 블로그를 시작하려고 합니다. 들어주는이, 반응해주는 이 없지만 혼자라도 주저리 주저리 떠들어보려고 합니다.
-주저리 주저리 끈기있게 저의 성장 기록으로 채우는 것을 지켜봐주세요.
-",
-        "wordCount": 39
+테스트 코드 작성1234567891011121314151617// __tests__/ToDoItem-test.js...import ToDoItem from &apos;../src/components/ToDoItem&",
+        "wordCount": 962
     }
 </script>
 
@@ -321,16 +344,12 @@
             
 <nav id="article-nav">
     
-        <a href="/2019/08/22/반갑습니다/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">새로운</strong>
-        <p class="article-nav-title">
-        
-            반갑습니다
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2019/10/19/TDD-06-ToDoList-Component/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">[TDD] 06 - ToDoList Component</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -487,7 +506,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://devohno.github.io/2019/08/21/시작을-알립니다/';
+    var disqus_url = 'https://devohno.github.io/2019/10/20/TDD-07-ToDoItem-Component/';
     
     (function() {
     var dsq = document.createElement('script');
